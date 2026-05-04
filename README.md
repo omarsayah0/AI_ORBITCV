@@ -282,13 +282,19 @@ These practical reception setups helped connect the project to a real RF-to-imag
 
 *Original satellite image displayed inside the interactive C++/OpenCV preprocessing window with keyboard controls.*
 
+---
+
 <img width="1411" height="876" alt="image" src="https://github.com/user-attachments/assets/6d266a3f-8679-424b-a3a3-013d67cb6077" />
 
 *Pixel-level view of the received satellite image, showing RGB intensity values used for basic image inspection and analysis.*
 
+---
+
 <img width="1408" height="874" alt="image" src="https://github.com/user-attachments/assets/f1728309-15df-47b7-8849-71c67a9689b6" />
 
 *Satellite image after applying a 30° rotation transformation in the interactive OpenCV preprocessing tool.*
+
+---
 
 <img width="1468" height="971" alt="image" src="https://github.com/user-attachments/assets/71630d89-d292-472d-823f-9b7ff84ed88b" />
 
