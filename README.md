@@ -1,4 +1,4 @@
-# ORBITCV
+# OrbitCV
 # Interactive Satellite Image Processing Tool
 
 ## Short Description
