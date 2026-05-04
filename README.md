@@ -257,12 +257,13 @@ Inside the ROI window:
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img src="https://github.com/user-attachments/assets/731144e4-e9ca-48d6-b21f-a6d0669766d5" width="100%">
+      <img width="1600" height="1200" alt="1" src="https://github.com/user-attachments/assets/90e75cd6-4d4e-4517-81d5-a54a5e003181" width="100%">
     </td>
     <td width="50%" valign="top">
       <img src="https://github.com/user-attachments/assets/cc6a4587-61e0-4f5a-8424-8e048210c41c" width="100%">
     </td>
   </tr>
+
 </table>
 
 This project is connected to a real satellite reception workflow. During the experiments, two antenna setups were used:
