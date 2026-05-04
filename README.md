@@ -5,9 +5,11 @@
 
 This project is an interactive **Computer Vision image preprocessing tool** built with **C++** and **OpenCV**.
 
-It allows the user to load a satellite image and apply classical image preprocessing operations, including crop, mouse-based ROI selection, flip, scale, rotation, affine transformation, and perspective transformation.
+It represents a practical end-to-end workflow, starting from the hardware side by preparing and using satellite reception antennas, capturing real signals from the Russian weather satellite **Meteor-M N2-4** through an **SDR-based RF setup**, converting the received data into a satellite image, and then analyzing and preprocessing that image inside this OpenCV application.
 
-The image used in this project was captured from a real satellite reception workflow using a **UHF antenna and SDR setup**, then processed inside this OpenCV application.
+The tool allows the user to apply classical image preprocessing operations, including crop, mouse-based ROI selection, flip, scale, rotation, affine transformation, and perspective transformation.
+
+Rather than being only a software demo, this project connects the complete path from **antenna-based satellite signal reception** to **interactive satellite image preprocessing and analysis**.
 
 ---
 
