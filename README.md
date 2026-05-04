@@ -246,10 +246,15 @@ Inside the ROI window:
 
 ## Practical Reception Setup
 
-<img width="1200" height="1600" alt="2" src="https://github.com/user-attachments/assets/e0b4d0cb-4690-4d6f-bd3c-74f123e0f2e4" />
-<img width="1200" height="1600" alt="3" src="https://github.com/user-attachments/assets/83e79cd4-8039-4142-8307-70facb8e3e59" />
-<img width="1200" height="1600" alt="4" src="https://github.com/user-attachments/assets/731144e4-e9ca-48d6-b21f-a6d0669766d5" />
-<img width="1600" height="1200" alt="1" src="https://github.com/user-attachments/assets/cc6a4587-61e0-4f5a-8424-8e048210c41c" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e0b4d0cb-4690-4d6f-bd3c-74f123e0f2e4" alt="QFH antenna setup" width="45%">
+  <img src="https://github.com/user-attachments/assets/83e79cd4-8039-4142-8307-70facb8e3e59" alt="V-dipole antenna setup" width="45%">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/731144e4-e9ca-48d6-b21f-a6d0669766d5" alt="Satellite reception setup" width="45%">
+  <img src="https://github.com/user-attachments/assets/cc6a4587-61e0-4f5a-8424-8e048210c41c" alt="SDR signal capture process" width="45%">
+</p>
 
 This project is connected to a real satellite reception workflow. During the experiments, two antenna setups were used:
 
