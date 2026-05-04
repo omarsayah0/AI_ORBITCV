@@ -259,7 +259,7 @@ Inside the ROI window:
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <img width="1200" height="1600" alt="4" src="https://github.com/user-attachments/assets/5187dff6-fa56-4ce9-bce5-922e95951e1d" width="100%">
+      <img width="900" height="1600" alt="6" src="https://github.com/user-attachments/assets/89a1050b-c5bd-40d8-aea7-054c8c8bb06e" width="100%">
     </td>
     <td width="50%" valign="top">
       <img width="900" height="1600" alt="5" src="https://github.com/user-attachments/assets/736d9865-c5f4-4030-a3a4-8688bfbb3bc8" width="100%">
