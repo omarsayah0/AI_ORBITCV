@@ -118,8 +118,6 @@ Based on the provided project files and Makefile, the expected project structure
 | `src/print.cpp` | Prints the available keyboard controls in the terminal. |
 | `input/image.jpeg` | Required input image file loaded by the application. |
 
-> Note: The uploaded files were provided individually, but the Makefile expects the source files to be inside `src/` and the header file to be inside `includes/`.
-
 ---
 
 ## Requirements
