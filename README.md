@@ -9,8 +9,6 @@ It allows the user to load a satellite image and apply classical image preproces
 
 The image used in this project was captured from a real satellite reception workflow using a **UHF antenna and SDR setup**, then processed inside this OpenCV application.
 
-> This project is not a full AI or Machine Learning system. It is a classical Computer Vision / Image Processing preprocessing tool.
-
 ---
 
 ## Table of Contents
