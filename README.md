@@ -323,7 +323,7 @@ It is a useful educational step between satellite image acquisition and more adv
 
 ## 👥 Contributors
 
-- **Omar Alethamat** – *AI Engineer*
+- **Omar Al ethamat** – *AI Engineer*
 
 Feel free to open issues or pull requests to contribute.
 
