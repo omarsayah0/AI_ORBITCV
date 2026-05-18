@@ -7,7 +7,10 @@ This project is an interactive **Computer Vision image preprocessing tool** buil
 
 It represents a practical end-to-end workflow, starting from the hardware side by preparing and using satellite reception antennas, capturing real signals from the Russian weather satellite **Meteor-M N2-4** through an **SDR-based RF setup**, converting the received data into a satellite image, and then analyzing and preprocessing that image inside this OpenCV application.
 
-The tool allows the user to apply classical image preprocessing operations, including crop, mouse-based ROI selection, flip, scale, rotation, affine transformation, and perspective transformation.
+The tool allows the user to apply two main families of classical image preprocessing operations:
+
+- **Geometric transformations**: crop, mouse-based ROI selection, flip, scale, rotation, affine transformation, and perspective transformation.
+- **Filtering techniques**: Gaussian blur, median filter, bilateral filter, sharpening filter, Sobel edge detection, and Laplacian edge detection.
 
 Rather than being only a software demo, this project connects the complete path from **antenna-based satellite signal reception** to **interactive satellite image preprocessing and analysis**.
 
@@ -62,6 +65,7 @@ The application opens the input satellite image, resizes it for display, and all
 
 The project includes the following features based on the actual source code:
 
+### Geometric Transformations
 - Reset to the original image
 - Center crop
 - Mouse-based ROI crop / region selection
@@ -70,6 +74,16 @@ The project includes the following features based on the actual source code:
 - Rotate image
 - Affine transformation
 - Perspective transformation
+
+### Filtering Techniques
+- Gaussian blur (smoothing / noise reduction)
+- Median filter (impulse / salt-and-pepper noise removal)
+- Bilateral filter (edge-preserving smoothing)
+- Sharpening filter (detail enhancement using a Laplacian-style kernel)
+- Sobel edge detection (gradient-based edges in X and Y directions)
+- Laplacian edge detection (second-derivative edges with Gaussian pre-smoothing)
+
+### Interaction
 - Keyboard-based interaction
 - On-image control menu
 - Terminal control menu
@@ -87,35 +101,51 @@ Based on the provided project files and Makefile, the expected project structure
 │   └── image.hpp
 ├── src/
 │   ├── main.cpp
-│   ├── crop.cpp
-│   ├── mouse.cpp
-│   ├── flip.cpp
-│   ├── scale.cpp
-│   ├── rotate.cpp
-│   ├── affine.cpp
-│   ├── perspective.cpp
 │   ├── draw.cpp
-│   └── print.cpp
+│   ├── print.cpp
+│   ├── geometric_transformations/
+│   │   ├── crop.cpp
+│   │   ├── mouse.cpp
+│   │   ├── flip.cpp
+│   │   ├── scale.cpp
+│   │   ├── rotate.cpp
+│   │   ├── affine.cpp
+│   │   └── perspective.cpp
+│   └── filtering_techniques/
+│       ├── gaussian_blur.cpp
+│       ├── median_blur.cpp
+│       ├── bilateral_filter.cpp
+│       ├── sharpening_filter.cpp
+│       ├── sobel_edge.cpp
+│       └── laplacian_edge.cpp
 └── input/
     └── image.jpeg
 ```
+
+The `src/` directory is split into two logical groups: `geometric_transformations/` for shape/position-based operations and `filtering_techniques/` for pixel-intensity-based operations.
 
 ### File Descriptions
 
 | File | Description |
 |---|---|
-| `Makefile` | Builds the project using `g++`, `pkg-config`, and OpenCV 4. The final executable name is `image`. |
-| `includes/image.hpp` | Main header file. Includes OpenCV and declares all image processing functions used across the project. |
-| `src/main.cpp` | Program entry point. Loads `input/image.jpeg`, resizes it to `1200x800`, displays the image, and handles keyboard interaction. |
-| `src/crop.cpp` | Performs a fixed center crop using an OpenCV `cv::Rect` region. |
-| `src/mouse.cpp` | Implements mouse-based ROI selection. The user drags over the image, confirms the selection, and receives the cropped result. |
-| `src/flip.cpp` | Flips the image horizontally using OpenCV. |
-| `src/scale.cpp` | Resizes the image to `400x400` using linear interpolation. |
-| `src/rotate.cpp` | Rotates the image by `30` degrees around the center. |
-| `src/affine.cpp` | Applies an affine transformation using three source points and three destination points. |
-| `src/perspective.cpp` | Applies a perspective transformation using four source points and four destination points. |
-| `src/draw.cpp` | Draws the control menu directly on the image window. |
+| `Makefile` | Builds the project using `g++`, `pkg-config`, and OpenCV 4. Compiles sources from `src/`, `src/geometric_transformations/`, and `src/filtering_techniques/`. The final executable name is `image`. |
+| `includes/image.hpp` | Main header file. Includes OpenCV and declares all image processing functions used across the project (geometric and filtering). |
+| `src/main.cpp` | Program entry point. Loads `input/image.jpeg`, resizes it to `1200x800`, displays the image, and handles keyboard interaction for both geometric transformations and filtering techniques. |
+| `src/draw.cpp` | Draws the control menu directly on the image window (geometric controls in green, filtering controls in orange). |
 | `src/print.cpp` | Prints the available keyboard controls in the terminal. |
+| `src/geometric_transformations/crop.cpp` | Performs a fixed center crop using an OpenCV `cv::Rect` region. |
+| `src/geometric_transformations/mouse.cpp` | Implements mouse-based ROI selection. The user drags over the image, confirms the selection, and receives the cropped result. |
+| `src/geometric_transformations/flip.cpp` | Flips the image horizontally using OpenCV. |
+| `src/geometric_transformations/scale.cpp` | Resizes the image to `400x400` using linear interpolation. |
+| `src/geometric_transformations/rotate.cpp` | Rotates the image by `30` degrees around the center. |
+| `src/geometric_transformations/affine.cpp` | Applies an affine transformation using three source points and three destination points. |
+| `src/geometric_transformations/perspective.cpp` | Applies a perspective transformation using four source points and four destination points. |
+| `src/filtering_techniques/gaussian_blur.cpp` | Applies a Gaussian blur with a `5x5` kernel for smoothing and noise reduction. |
+| `src/filtering_techniques/median_blur.cpp` | Applies a median filter with kernel size `5`, useful for removing impulse / salt-and-pepper noise. |
+| `src/filtering_techniques/bilateral_filter.cpp` | Applies a bilateral filter (`d=9`, `sigmaColor=75`, `sigmaSpace=75`) for edge-preserving smoothing. |
+| `src/filtering_techniques/sharpening_filter.cpp` | Sharpens the image using a `3x3` Laplacian-style kernel via `cv::filter2D`. |
+| `src/filtering_techniques/sobel_edge.cpp` | Detects edges using the Sobel operator in X and Y directions, then combines them with `cv::addWeighted`. |
+| `src/filtering_techniques/laplacian_edge.cpp` | Detects edges using the Laplacian operator after a Gaussian pre-smoothing step to reduce noise. |
 | `input/image.jpeg` | Required input image file loaded by the application. |
 
 ---
@@ -216,6 +246,8 @@ After running the program, an OpenCV window will appear with the satellite image
 
 Use the keyboard controls below:
 
+#### Geometric Transformations
+
 | Key | Action |
 |---|---|
 | `o` | Reset to the original image |
@@ -226,6 +258,22 @@ Use the keyboard controls below:
 | `r` | Rotate the image by `30` degrees |
 | `a` | Apply affine transformation |
 | `p` | Apply perspective transformation |
+
+#### Filtering Techniques
+
+| Key | Action |
+|---|---|
+| `g` | Apply Gaussian blur (`5x5` kernel) |
+| `n` | Apply median filter (kernel size `5`) |
+| `b` | Apply bilateral filter (edge-preserving smoothing) |
+| `h` | Apply sharpening filter (`3x3` Laplacian-style kernel) |
+| `e` | Apply Sobel edge detection (X + Y gradients) |
+| `l` | Apply Laplacian edge detection (with Gaussian pre-smoothing) |
+
+#### General
+
+| Key | Action |
+|---|---|
 | `q` | Quit |
 | `ESC` | Quit |
 
@@ -306,18 +354,26 @@ These practical reception setups helped connect the project to a real RF-to-imag
 
 - The project uses deterministic image processing operations.
 - It is based on classical Computer Vision, not a trained AI model.
-- OpenCV functions are used for image loading, resizing, display, mouse interaction, and geometric transformations.
+- OpenCV functions are used for image loading, resizing, display, mouse interaction, geometric transformations, and filtering.
 - The input image is resized to `1200x800` at the start of the program for consistent display.
-- Transformations are applied interactively to the current image, not always to the original image.
+- Transformations and filters are applied interactively to the current image, not always to the original image, so operations can be chained (for example: rotate, then sharpen, then apply Sobel edge detection). Press `o` at any time to reset to the original.
+- Filtering parameters are fixed in the source code:
+  - **Gaussian blur** — `5x5` kernel, `sigma = 0` (auto-computed by OpenCV).
+  - **Median filter** — kernel size `5`.
+  - **Bilateral filter** — `d = 9`, `sigmaColor = 75`, `sigmaSpace = 75`.
+  - **Sharpening** — `3x3` Laplacian-style kernel: `[[0,-1,0], [-1,5,-1], [0,-1,0]]`.
+  - **Sobel** — `3x3` kernel, X and Y gradients combined with equal `0.5` weights.
+  - **Laplacian** — `3x3` kernel applied after a `3x3` Gaussian pre-smoothing step.
+- Edge detection operators (Sobel and Laplacian) internally convert the image to grayscale, then convert the result back to BGR so that the displayed image keeps a consistent 3-channel format.
 - The project can be extended later with AI models for classification, segmentation, denoising, or satellite image analysis.
 
 ---
 
 ## Conclusion
 
-This project provides a practical demonstration of how a satellite image captured through an RF and SDR workflow can be processed using classical Computer Vision techniques.
+This project provides a practical demonstration of how a satellite image captured through an RF and SDR workflow can be processed using classical Computer Vision techniques, covering both **geometric transformations** (crop, flip, scale, rotate, affine, perspective) and **filtering techniques** (Gaussian blur, median filter, bilateral filter, sharpening, Sobel and Laplacian edge detection).
 
-It is a useful educational step between satellite image acquisition and more advanced image analysis. By combining real satellite imagery with OpenCV preprocessing, the project creates a strong foundation for future satellite image enhancement, segmentation, or AI-based analysis.
+It is a useful educational step between satellite image acquisition and more advanced image analysis. By combining real satellite imagery with OpenCV preprocessing — reshaping the geometry of the image and enhancing or extracting features through filtering — the project creates a strong foundation for future satellite image enhancement, segmentation, or AI-based analysis.
 
 ---
 
