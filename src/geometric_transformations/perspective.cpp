@@ -16,7 +16,7 @@ cv::Mat perspective_image(const cv::Mat& image)
     src[2] = cv::Point2f(w * 0.20f, h * 0.75f);
     src[3] = cv::Point2f(w * 0.80f, h * 0.80f);
 
-    // To see the image from that perspective.
+    //To see the point of view of the perspective
     // cv::Mat presp = image.clone();
     // cv::circle(presp, src[0], 8, cv::Scalar(0, 0, 255), -1);
     // cv::circle(presp, src[1], 8, cv::Scalar(0, 255, 0), -1);

@@ -12,4 +12,10 @@ void print_menu()
     std::cout << "a: affine\n";
     std::cout << "p: perspective\n";
     std::cout << "q: quit\n";
+    std::cout << "g: Gaussian blur\n";
+    std::cout << "n: Median filter\n";
+    std::cout << "b: Bilateral filter\n";
+    std::cout << "h: Sharpen image\n";
+    std::cout << "e: Sobel edge detection\n";
+    std::cout << "l: Laplacian edge detection\n";
 }

@@ -4,8 +4,26 @@ CXX = g++
 SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = includes
+GT = geometric_transformations
+FT = filtering_techniques
 
-SRCS = main.cpp crop.cpp flip.cpp print.cpp scale.cpp rotate.cpp affine.cpp perspective.cpp mouse.cpp draw.cpp
+SRCS =	main.cpp \
+		$(GT)/crop.cpp \
+		$(GT)/flip.cpp \
+		print.cpp \
+		$(GT)/scale.cpp \
+		$(GT)/rotate.cpp \
+		$(GT)/affine.cpp \
+		$(GT)/perspective.cpp \
+		$(GT)/mouse.cpp \
+		draw.cpp \
+		$(FT)/bilateral_filter.cpp \
+		$(FT)/gaussian_blur.cpp \
+		$(FT)/laplacian_edge.cpp \
+		$(FT)/median_blur.cpp \
+		$(FT)/sharpening_filter.cpp \
+		$(FT)/sobel_edge.cpp
+
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
 CXXFLAGS = -I$(INC_DIR) $(shell pkg-config --cflags opencv4)

@@ -13,5 +13,11 @@ cv::Mat affine_image(const cv::Mat& image);
 cv::Mat perspective_image(const cv::Mat& image);
 cv::Mat mouse_crop_image(const cv::Mat& image);
 void    draw_menu(cv::Mat& img);
+cv::Mat	gaussian_blur_image(const cv::Mat& image);
+cv::Mat	median_filter_image(const cv::Mat& image);
+cv::Mat	bilateral_filter_image(const cv::Mat& image);
+cv::Mat	sharpen_image(const cv::Mat& image);
+cv::Mat	sobel_edge_image(const cv::Mat& image);
+cv::Mat	laplacian_edge_image(const cv::Mat& image);
 
 #endif
