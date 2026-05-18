@@ -18,4 +18,5 @@ void print_menu()
     std::cout << "h: Sharpen image\n";
     std::cout << "e: Sobel edge detection\n";
     std::cout << "l: Laplacian edge detection\n";
+    std::cout << "x: sift align images\n";
 }

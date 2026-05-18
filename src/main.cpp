@@ -56,6 +56,8 @@ int  main()
         	current_image = sobel_edge_image(current_image);
         else if (key == 'l')
         	current_image = laplacian_edge_image(current_image);
+        else if (key == 'x')
+            sift_align_images();
     }
 
     cv::destroyAllWindows();

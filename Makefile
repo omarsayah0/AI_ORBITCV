@@ -6,6 +6,7 @@ OBJ_DIR = obj
 INC_DIR = includes
 GT = geometric_transformations
 FT = filtering_techniques
+FM = feature_matching
 
 SRCS =	main.cpp \
 		$(GT)/crop.cpp \
@@ -22,7 +23,13 @@ SRCS =	main.cpp \
 		$(FT)/laplacian_edge.cpp \
 		$(FT)/median_blur.cpp \
 		$(FT)/sharpening_filter.cpp \
-		$(FT)/sobel_edge.cpp
+		$(FT)/sobel_edge.cpp \
+		$(FM)/sift_features.cpp \
+		$(FM)/image_loader.cpp \
+		$(FM)/matcher.cpp \
+		$(FM)/homography.cpp \
+		$(FM)/display.cpp \
+		$(FM)/sift_align_images.cpp
 
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
