@@ -399,6 +399,29 @@ These practical reception setups helped connect the project to a real RF-to-imag
 
 ---
 
+<img width="1917" height="999" alt="image" src="https://github.com/user-attachments/assets/9d193bca-9f97-4b75-93d9-c9e412723081" />
+
+*Reference satellite image used as the baseline image for SIFT feature detection, matching, and automatic geometric alignment.*
+
+---
+
+<img width="1918" height="1012" alt="image" src="https://github.com/user-attachments/assets/6603f388-8d62-479b-bee7-9179f1f6ee96" />
+
+*Rotated and transformed satellite image used as the second input image for SIFT-based feature matching and automatic image alignment.*
+
+---
+
+<img width="1919" height="999" alt="image" src="https://github.com/user-attachments/assets/4d18d883-a11e-4fdc-93a6-f0942c1cd37e" />
+
+*SIFT feature matching visualization showing automatically detected corresponding satellite image features between two transformed images before geometric alignment.*
+
+---
+
+<img width="1919" height="1003" alt="image" src="https://github.com/user-attachments/assets/76574cf8-b33c-493b-9708-0ac6c96003c4" />
+
+*Automatically aligned satellite image produced after SIFT feature matching, homography estimation, and perspective-based geometric correction.*
+
+---
 
 ## Technical Notes
 
