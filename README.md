@@ -1,4 +1,4 @@
-<img width="3802" height="1644" alt="Capture_2026_05_21_01_46_12_398" src="https://github.com/user-attachments/assets/f31749a8-6b89-4ba5-8e4f-22f0b83d20cc" /># OrbitCV
+# OrbitCV
 
 ## Satellite Signal Acquisition, Classical Computer Vision, and Deep Learning Analysis
 
