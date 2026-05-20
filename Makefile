@@ -7,6 +7,8 @@ INC_DIR = includes
 GT = geometric_transformations
 FT = filtering_techniques
 FM = feature_matching
+S = sift_descriptor
+O = orb_descriptor
 
 SRCS =	main.cpp \
 		$(GT)/crop.cpp \
@@ -24,12 +26,19 @@ SRCS =	main.cpp \
 		$(FT)/median_blur.cpp \
 		$(FT)/sharpening_filter.cpp \
 		$(FT)/sobel_edge.cpp \
-		$(FM)/sift_features.cpp \
-		$(FM)/image_loader.cpp \
-		$(FM)/matcher.cpp \
-		$(FM)/homography.cpp \
-		$(FM)/display.cpp \
-		$(FM)/sift_align_images.cpp
+		$(FM)/$(S)/sift_features.cpp \
+		$(FM)/$(S)/image_loader.cpp \
+		$(FM)/$(S)/matcher.cpp \
+		$(FM)/$(S)/homography.cpp \
+		$(FM)/$(S)/display.cpp \
+		$(FM)/$(S)/sift_align_images.cpp \
+		$(FM)/$(O)/orb_features.cpp \
+		$(FM)/$(O)/image_loader.cpp \
+		$(FM)/$(O)/matcher.cpp \
+		$(FM)/$(O)/homography.cpp \
+		$(FM)/$(O)/display.cpp \
+		$(FM)/$(O)/orb_align_images.cpp
+
 
 OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
@@ -50,7 +59,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
