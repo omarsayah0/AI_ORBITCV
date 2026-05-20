@@ -58,6 +58,8 @@ int  main()
         	current_image = laplacian_edge_image(current_image);
         else if (key == 'x')
             sift_align_images();
+        else if (key == 'z')
+            orb_align_images();
     }
 
     cv::destroyAllWindows();

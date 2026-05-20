@@ -26,7 +26,8 @@ void draw_menu(cv::Mat& img)
     cv::putText(img, "h: sharpen",       cv::Point(20,y), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255,200,0),1); y+=25;
     cv::putText(img, "e: sobel edge",    cv::Point(20,y), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255,200,0),1); y+=25;
     cv::putText(img, "l: laplacian",     cv::Point(20,y), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255,200,0),1); y+=25;
-    cv::putText(img, "x: align ",     cv::Point(20,y), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255,200,0),1); y+=25;
+    cv::putText(img, "x: align_sift ",     cv::Point(20,y), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255,200,0),1); y+=25;
+    cv::putText(img, "z: align_orb ",     cv::Point(20,y), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(255,200,0),1); y+=25;
 
     cv::putText(img, "q: quit",          cv::Point(20,y), cv::FONT_HERSHEY_SIMPLEX, 0.6, cv::Scalar(0,255,0),1);
 }

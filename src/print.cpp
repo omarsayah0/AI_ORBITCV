@@ -19,4 +19,5 @@ void print_menu()
     std::cout << "e: Sobel edge detection\n";
     std::cout << "l: Laplacian edge detection\n";
     std::cout << "x: sift align images\n";
+    std::cout << "z: orb align images\n";
 }
