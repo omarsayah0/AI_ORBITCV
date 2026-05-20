@@ -1,0 +1,23 @@
+#include "image.hpp"
+
+void print_menu()
+{
+    std::cout << "Controls:\n";
+    std::cout << "o: original\n";
+    std::cout << "c: crop\n";
+    std::cout << "m: mouse crop / select ROI\n";
+    std::cout << "f: flip\n";
+    std::cout << "s: scale\n";
+    std::cout << "r: rotate\n";
+    std::cout << "a: affine\n";
+    std::cout << "p: perspective\n";
+    std::cout << "q: quit\n";
+    std::cout << "g: Gaussian blur\n";
+    std::cout << "n: Median filter\n";
+    std::cout << "b: Bilateral filter\n";
+    std::cout << "h: Sharpen image\n";
+    std::cout << "e: Sobel edge detection\n";
+    std::cout << "l: Laplacian edge detection\n";
+    std::cout << "x: sift align images\n";
+    std::cout << "z: orb align images\n";
+}

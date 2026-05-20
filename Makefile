@@ -1,9 +1,13 @@
 NAME = image
 CXX = g++
 
-SRC_DIR = src
-OBJ_DIR = obj
-INC_DIR = includes
+CORE = OrbitCV-Core
+AI   = OrbitCV-AI
+
+SRC_DIR = $(CORE)/src
+OBJ_DIR = $(CORE)/obj
+INC_DIR = $(CORE)/includes
+
 GT = geometric_transformations
 FT = filtering_techniques
 FM = feature_matching
@@ -45,6 +49,8 @@ OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 CXXFLAGS = -I$(INC_DIR) $(shell pkg-config --cflags opencv4)
 OPENCV_LIBS = $(shell pkg-config --libs opencv4)
 
+# ── Core CV (C++) targets ─────────────────────────────────────────────────────
+
 all: $(NAME)
 
 setup:
@@ -65,3 +71,16 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+# ── AI module (Python) targets ────────────────────────────────────────────────
+
+install:
+	cd $(AI) && pip install -e .
+
+train:
+	cd $(AI) && python main.py
+
+test:
+	cd $(AI) && python test.py
+
+.PHONY: all setup clean fclean re install train test

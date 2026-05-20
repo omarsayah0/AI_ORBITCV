@@ -1,0 +1,36 @@
+paths:
+  data_dir: data
+  data_csv : data.csv
+  model_dir : outputs/models
+  best_model_path: outputs/models/best_model.pth
+  checkpoint_path: outputs/models/checkpoint.pth
+  final_model: outputs/models/final_model.pth
+
+data:
+  image_size: 768
+  classes:
+    - Fish
+    - Flower
+    - Gravel
+    - Sugar
+  val_size: 0.2
+  test_size: 0.1
+  num_workers: 0
+  seed: 42
+
+
+train :
+  batch_size: 8
+  epochs: 100
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  checkpoint_every: 5
+
+model:
+  backbone: efficientnet-b4
+  pretrained: true
+
+post_processing:
+  threshold: 0.5
+  min_area: 500
+  kernel_size: 3

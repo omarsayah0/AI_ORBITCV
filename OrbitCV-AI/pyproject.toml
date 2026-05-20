@@ -1,0 +1,40 @@
+[project]
+name = "cloud-segmentation"
+version = "0.1.0"
+description = "Cloud image multi-label segmentation using U-Net with EfficientNet encoder"
+requires-python = ">=3.10"
+
+authors = [
+    { name = "omar al ethamat" }
+]
+
+dependencies = [
+    "torch",
+    "torchvision",
+    "segmentation-models-pytorch",
+    "efficientnet-pytorch",
+    "albumentations",
+    "opencv-python-headless",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "scikit-image",
+    "pyyaml",
+    "tqdm",
+    "pillow",
+    "matplotlib"
+]
+
+[project.scripts]
+cloud-segmentation = "main:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
